@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".algorithm.KMeanClusterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/muli_black"
+            android:text="@string/kmeans_clustering"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:transitionName="header_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="Number of Points"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/num_points_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:hint="Points">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="Number of Clusters"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/num_clusters_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:hint="Clusters">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/kmeans_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"
+                android:fontFamily="@font/muli_black"
+                android:onClick="onKMeansContinue"
+                android:text="@string/continue_text"
+                android:textColor="#fff"
+                android:transitionName="button_trans" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/kmeans_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="Enter Points"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kmeans_point_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:hint="Points">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:maxLines="5"
+                        android:text="1,2\n3,4" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="Enter Clusters"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kmeans_cluster_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:hint="Clusters">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:maxLines="5"
+                        android:text="1,2\n3,4" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/kmeans_distance_method"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:contentDescription="Distance Method"
+                    android:hint="Distance Method">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/kmeans_distance_method_atv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/kmeans_compute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"
+                android:fontFamily="@font/muli_black"
+                android:onClick="onKMeansCompute"
+                android:text="@string/compute"
+                android:textColor="#fff"
+                android:transitionName="button_trans" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/kmeans_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/muli_black"
+                android:text="@string/result"
+                android:textColor="#000"
+                android:textSize="32sp"
+                android:transitionName="header_text" />
+
+            <TableLayout
+                android:id="@+id/kmeans_result_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

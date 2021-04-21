@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SampleActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Table Example"
+        android:textSize="24sp" />
+
+    <TableLayout
+        android:id="@+id/sample_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TableRow android:background="@color/lightWhite">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_bold"
+                android:text="Measure"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_bold"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli_bold"
+                android:text="Derivation"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/sensitivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Sensitivity"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/sensitivity_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/sensitivity_derivation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="TPR = TP / (TP + FN)"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/specificity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Specificity"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/specificity_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/specificity_derivation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="SPC = TN / (FP + TN)"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/precision"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Precision"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/precision_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/precision_derivation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="PPV = TP / (TP + FP)"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/negative_predictive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Negative Predictive Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/negative_predictive_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/negative_predictive_derivation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="NPV = TN / (TN + FN)"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/accuracy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Accuracy"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/accuracy_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="Value"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/accuracy_derivation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/muli"
+                android:text="ACC = (TP + TN) / (P + N)"
+                android:textColor="@color/colorAccent" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".common.CourseActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_black"
+            android:text="Course"
+            android:layout_marginBottom="30dp"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:transitionName="header_text" />
+
+        <Button
+            android:id="@+id/data_mining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="#000"
+            android:onClick="callDataMiningActivity"
+            android:text="@string/data_mining"
+            android:fontFamily="@font/muli_black"
+            android:textColor="#fff"
+            android:transitionName="button_trans" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>

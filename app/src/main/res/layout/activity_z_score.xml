@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".algorithm.ZScoreActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/muli_black"
+            android:text="@string/z_score"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:transitionName="header_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/muli_bold"
+                android:text="Enter the values"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/zscore_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textLongMessage"
+                    android:text="1,2,3,4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/zscore_compute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"
+                android:fontFamily="@font/muli_black"
+                android:onClick="onZScoreCompute"
+                android:text="@string/compute"
+                android:textColor="#fff"
+                android:transitionName="button_trans" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/muli_black"
+                android:text="@string/result"
+                android:textColor="#000"
+                android:textSize="32sp"
+                android:transitionName="header_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow android:background="@color/lightWhite">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Measure"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/zscore_lenght"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Length"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/zscore_lenght_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/zscore_sum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Sum"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/zscore_sum_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/zscore_mean"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Mean"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/zscore_mean_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/zscore_variance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Variance"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/zscore_variance_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/zscore_std_dev"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Std Deviation"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/zscore_std_dev_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TableLayout
+                android:id="@+id/zscore_result_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

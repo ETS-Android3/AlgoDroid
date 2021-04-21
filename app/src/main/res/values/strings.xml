@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AlgoDroid</string>
+    <string name="sign_in_header">Sign In to Continue</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user_register_here">New User? Register Here</string>
+    <string name="sign_in">Sign In</string>
+    <string name="data_mining">Data Mining</string>
+    <string name="confusion_matrix">Confusion Matrix</string>
+    <string name="compute">Compute</string>
+    <string name="kmeans_clustering">KMeans Clustering</string>
+    <string name="result">Result</string>
+    <string name="continue_text">Continue</string>
+    <string name="five_point_summary">Five Point Summary</string>
+    <string name="z_score">Z-Score Outlier</string>
+    <string-array name="kmeans_distance_method">
+        <item>Euclidean</item>
+        <item>Manhattan</item>
+        <item>Cosine</item>
+    </string-array>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+</resources>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".algorithm.FivePointSummaryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/muli_black"
+            android:text="@string/five_point_summary"
+            android:textColor="#000"
+            android:textSize="32sp"
+            android:transitionName="header_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/muli_bold"
+                android:text="Enter the values"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fps_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textLongMessage"
+                    android:text="1,2,3,4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/fps_compute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#000"
+                android:fontFamily="@font/muli_black"
+                android:onClick="onFPSCompute"
+                android:text="@string/compute"
+                android:textColor="#fff"
+                android:transitionName="button_trans" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/muli_black"
+                android:text="@string/result"
+                android:textColor="#000"
+                android:textSize="32sp"
+                android:transitionName="header_text" />
+
+            <TextView
+                android:id="@+id/fps_sorted_array"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/muli"
+                android:text="Sorted Array"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow android:background="@color/lightWhite">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Measure"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_minimum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Minimum"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_minimum_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_first_quartile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="First Quartile (Q1)"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_first_quartile_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_median"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Median (Q2)"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_median_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_third_quartile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Third Quartile (Q3)"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_third_quartile_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_maximum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Maximum"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_maximum_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_array_length"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Length (n)"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_array_length_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_range"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Range"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_range_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_iqr"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Inter Quartile Range"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_iqr_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_lower_fence"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Lower Fence"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_lower_fence_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_upper_fence"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Upper Fence"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_upper_fence_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/fps_outlier"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Set of Outliers"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/fps_outlier_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/muli"
+                        android:text="Value"
+                        android:textColor="@color/colorAccent" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
