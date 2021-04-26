@@ -125,15 +125,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                Pair[] pairs = new Pair[5];
-                pairs[0] = new Pair<View, String>(headerText, "header_text");
-                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
-                pairs[2] = new Pair<View, String>(passwordLayout, "password_trans");
-                pairs[3] = new Pair<View, String>(logInBtn, "button_trans");
-                pairs[4] = new Pair<View, String>(goToRegisterBtn, "goto_trans");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
-
-                startActivity(intent, options.toBundle());
+//                Pair[] pairs = new Pair[5];
+//                pairs[0] = new Pair<View, String>(headerText, "header_text");
+//                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
+//                pairs[2] = new Pair<View, String>(passwordLayout, "password_trans");
+//                pairs[3] = new Pair<View, String>(logInBtn, "button_trans");
+//                pairs[4] = new Pair<View, String>(goToRegisterBtn, "goto_trans");
+//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+//
+//                startActivity(intent, options.toBundle());
+                startActivity(intent);
                 finish();
             }
         });
@@ -143,14 +144,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                Pair[] pairs = new Pair[4];
-                pairs[0] = new Pair<View, String>(headerText, "header_text");
-                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
-                pairs[2] = new Pair<View, String>(logInBtn, "button_trans");
-                pairs[3] = new Pair<View, String>(goToRegisterBtn, "goto_trans");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
-
-                startActivity(intent, options.toBundle());
+//                Pair[] pairs = new Pair[4];
+//                pairs[0] = new Pair<View, String>(headerText, "header_text");
+//                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
+//                pairs[2] = new Pair<View, String>(logInBtn, "button_trans");
+//                pairs[3] = new Pair<View, String>(goToRegisterBtn, "goto_trans");
+//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+//
+//                startActivity(intent, options.toBundle());
+                startActivity(intent);
                 finish();
             }
         });

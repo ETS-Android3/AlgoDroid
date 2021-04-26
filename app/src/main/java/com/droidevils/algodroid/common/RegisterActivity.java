@@ -118,15 +118,16 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                Pair[] pairs = new Pair[5];
-                pairs[0] = new Pair<View, String>(headerText, "header_text");
-                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
-                pairs[2] = new Pair<View, String>(passwordLayout, "password_trans");
-                pairs[3] = new Pair<View, String>(registerBtn, "button_trans");
-                pairs[4] = new Pair<View, String>(goToLoginBtn, "goto_trans");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RegisterActivity.this, pairs);
-
-                startActivity(intent, options.toBundle());
+//                Pair[] pairs = new Pair[5];
+//                pairs[0] = new Pair<View, String>(headerText, "header_text");
+//                pairs[1] = new Pair<View, String>(emailLayout, "email_trans");
+//                pairs[2] = new Pair<View, String>(passwordLayout, "password_trans");
+//                pairs[3] = new Pair<View, String>(registerBtn, "button_trans");
+//                pairs[4] = new Pair<View, String>(goToLoginBtn, "goto_trans");
+//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RegisterActivity.this, pairs);
+//
+//                startActivity(intent, options.toBundle());
+                startActivity(intent);
                 finish();
             }
         });
