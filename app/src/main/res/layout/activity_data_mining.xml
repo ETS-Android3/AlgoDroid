@@ -75,6 +75,32 @@
             android:textColor="#fff"
             android:transitionName="button_trans" />
 
+        <Button
+            android:id="@+id/distance_matrix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="#000"
+            android:text="Distance Matrix"
+            android:onClick="callDistanceMatrixActivity"
+            android:fontFamily="@font/muli_black"
+            android:textColor="#fff"
+            android:transitionName="button_trans" />
+
+        <Button
+            android:id="@+id/correlation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="#000"
+            android:text="Correlation"
+            android:onClick="callCorrelationActivity"
+            android:fontFamily="@font/muli_black"
+            android:textColor="#fff"
+            android:transitionName="button_trans" />
+
     </LinearLayout>
 
 

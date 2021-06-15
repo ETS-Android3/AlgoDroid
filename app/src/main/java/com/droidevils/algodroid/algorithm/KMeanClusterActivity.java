@@ -57,7 +57,6 @@ public class KMeanClusterActivity extends AppCompatActivity {
         ArrayAdapter<String> distanceMethodAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.kmeans_distance_method));
         distanceMethod.setAdapter(distanceMethodAdapter);
-
     }
 
     public void onKMeansContinue(View view) {

@@ -85,9 +85,17 @@
                 android:textSize="32sp"
                 android:transitionName="header_text" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/zscore_sorted_array"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/muli"
+                android:text="Sorted Array"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
 
             <TableLayout
                 android:layout_width="match_parent"

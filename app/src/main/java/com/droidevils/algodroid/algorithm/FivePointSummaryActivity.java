@@ -15,6 +15,7 @@ import com.droidevils.algodroid.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -81,6 +82,7 @@ public class FivePointSummaryActivity extends AppCompatActivity {
     }
 
     public void updateResultIntoTable(FivePointSummary fps) {
+        Collections.sort(fps.getData());
         sortedArray.setText(String.valueOf(fps.getData().toString()));
         min.setText(String.valueOf(fps.getMin()));
         q1.setText(String.valueOf(fps.getFirstQuartile()));

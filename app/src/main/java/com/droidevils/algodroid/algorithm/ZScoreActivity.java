@@ -16,6 +16,7 @@ import com.droidevils.algodroid.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +24,7 @@ public class ZScoreActivity extends AppCompatActivity {
 
     LinearLayout resutlLayout;
     TextInputLayout inputValue;
-    TextView length, sum, mean, variance, stdDeviation;
+    TextView sortedArray, length, sum, mean, variance, stdDeviation;
     TableLayout zScoreResult;
     Button zScoreButton;
 
@@ -34,6 +35,7 @@ public class ZScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_z_score);
 
         inputValue = findViewById(R.id.zscore_input);
+        sortedArray = findViewById(R.id.zscore_sorted_array);
         length = findViewById(R.id.zscore_lenght_value);
         sum = findViewById(R.id.zscore_sum_value);
         mean = findViewById(R.id.zscore_mean_value);
@@ -65,6 +67,8 @@ public class ZScoreActivity extends AppCompatActivity {
     }
 
     private void updateResultIntoTable(ZScore zScore) {
+        Collections.sort(zScore.getData());
+        sortedArray.setText(String.valueOf(zScore.getData().toString()));
         length.setText(String.valueOf(zScore.getLength()));
         sum.setText(String.valueOf(zScore.getSum()));
         mean.setText(String.valueOf(zScore.getMean()));

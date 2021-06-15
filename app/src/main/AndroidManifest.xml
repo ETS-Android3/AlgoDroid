@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlgoDroid">
-        <activity android:name=".algorithm.ZScoreActivity"></activity>
+        <activity android:name=".algorithm.CorrelationActivity"></activity>
+        <activity android:name=".algorithm.DistanceMatrixActivity" />
+        <activity android:name=".algorithm.ZScoreActivity" />
         <activity android:name=".common.ForgotPasswordActivity" />
         <activity android:name=".common.RegisterActivity" />
         <activity android:name=".common.LoginActivity" />
@@ -19,7 +21,7 @@
         <activity android:name=".SampleActivity" />
         <activity
             android:name=".algorithm.KMeanClusterActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".algorithm.ConfusionMatrixActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />

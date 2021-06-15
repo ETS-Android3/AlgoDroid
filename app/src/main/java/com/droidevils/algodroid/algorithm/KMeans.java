@@ -10,7 +10,7 @@ public class KMeans {
     public static final int MANHATTAN_DISTANCE = 1;
     public static final int COSINE_DISTANCE = 2;
 
-    private static int DISTANCE_METHOD = 1;
+    private static int DISTANCE_METHOD = 0;
 
     int pn, cn;
     Point[] points;

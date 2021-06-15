@@ -44,7 +44,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/muli_bold"
-                    android:text="True Positive"
+                    android:text="Actual Positive"
                     android:textColor="@color/colorAccent" />
 
                 <TextView
@@ -53,7 +53,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/muli_bold"
-                    android:text="False Positive"
+                    android:text="Actual Negative"
                     android:textColor="@color/colorAccent" />
 
             </LinearLayout>

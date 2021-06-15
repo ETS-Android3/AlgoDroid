@@ -9,6 +9,8 @@ import android.view.View;
 
 import com.droidevils.algodroid.R;
 import com.droidevils.algodroid.algorithm.ConfusionMatrixActivity;
+import com.droidevils.algodroid.algorithm.CorrelationActivity;
+import com.droidevils.algodroid.algorithm.DistanceMatrixActivity;
 import com.droidevils.algodroid.algorithm.FivePointSummaryActivity;
 import com.droidevils.algodroid.algorithm.KMeanClusterActivity;
 import com.droidevils.algodroid.algorithm.ZScoreActivity;
@@ -39,6 +41,16 @@ public class DataMiningActivity extends AppCompatActivity {
 
     public void callKMeansClusterActivity(View view){
         Intent intent = new Intent(getApplicationContext(), KMeanClusterActivity.class);
+        startActivity(intent);
+    }
+
+    public void callDistanceMatrixActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), DistanceMatrixActivity.class);
+        startActivity(intent);
+    }
+
+    public void callCorrelationActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), CorrelationActivity.class);
         startActivity(intent);
     }
 
