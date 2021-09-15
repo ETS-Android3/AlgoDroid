@@ -56,7 +56,7 @@ public class KMeans {
 
         public double roundDecimal(double d) {
             df = new DecimalFormat("0.00");
-            df.setRoundingMode(RoundingMode.UP);
+            df.setRoundingMode(RoundingMode.HALF_UP);
             return Double.parseDouble(df.format(d));
         }
     }
@@ -136,7 +136,8 @@ public class KMeans {
                     cluster[i] = j;
                 }
             }
-            centroids[i + 1][cluster[i]] = point.computeCentroid(centroids[i][cluster[i]]);
+            //Update Centroid Points
+            //centroids[i + 1][cluster[i]] = point.computeCentroid(centroids[i][cluster[i]]);
         }
 
     }

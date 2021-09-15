@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlgoDroid">
         <activity android:name=".algorithm.CorrelationActivity"></activity>
+        <activity android:name=".algorithm.RegressionActivity" />
         <activity android:name=".algorithm.DistanceMatrixActivity" />
         <activity android:name=".algorithm.ZScoreActivity" />
         <activity android:name=".common.ForgotPasswordActivity" />

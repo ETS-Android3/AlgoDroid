@@ -13,6 +13,7 @@ import com.droidevils.algodroid.algorithm.CorrelationActivity;
 import com.droidevils.algodroid.algorithm.DistanceMatrixActivity;
 import com.droidevils.algodroid.algorithm.FivePointSummaryActivity;
 import com.droidevils.algodroid.algorithm.KMeanClusterActivity;
+import com.droidevils.algodroid.algorithm.RegressionActivity;
 import com.droidevils.algodroid.algorithm.ZScoreActivity;
 
 public class DataMiningActivity extends AppCompatActivity {
@@ -51,6 +52,11 @@ public class DataMiningActivity extends AppCompatActivity {
 
     public void callCorrelationActivity(View view){
         Intent intent = new Intent(getApplicationContext(), CorrelationActivity.class);
+        startActivity(intent);
+    }
+
+    public void callRegressionActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), RegressionActivity.class);
         startActivity(intent);
     }
 

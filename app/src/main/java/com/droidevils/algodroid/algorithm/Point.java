@@ -37,7 +37,7 @@ public class Point {
 
     public double roundDecimal(double d) {
         df = new DecimalFormat("0.00");
-        df.setRoundingMode(RoundingMode.UP);
+        df.setRoundingMode(RoundingMode.HALF_UP);
         return Double.parseDouble(df.format(d));
     }
 }
